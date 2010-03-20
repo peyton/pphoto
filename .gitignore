@@ -1,0 +1,13 @@
+*.tar
+*.tar.gz
+*.tar.bz2
+*.pyc
+*.pyo
+test.db
+static/CACHE/
+static/css/screen.css
+src/
+lib/
+bin/
+include/
+build/
