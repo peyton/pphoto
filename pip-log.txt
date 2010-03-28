@@ -1,0 +1,82 @@
+--editable=git://github.com/robhudson/django-debug-toolbar.git is not the right format; it must have #egg=Package
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 671, in run
+    InstallRequirement.from_editable(name, default_vcs=options.default_vcs))
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1682, in from_editable
+    name, url = parse_editable(editable_req, default_vcs)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 4485, in parse_editable
+    % editable_req)
+InstallationError: --editable=git://github.com/robhudson/django-debug-toolbar.git is not the right format; it must have #egg=Package
+------------------------------------------------------------
+/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py run on Sat Mar 20 18:01:28 2010
+--editable=git://github.com/dziegler/django-css.git is not the right format; it must have #egg=Package
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 671, in run
+    InstallRequirement.from_editable(name, default_vcs=options.default_vcs))
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1682, in from_editable
+    name, url = parse_editable(editable_req, default_vcs)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 4485, in parse_editable
+    % editable_req)
+InstallationError: --editable=git://github.com/dziegler/django-css.git is not the right format; it must have #egg=Package
+------------------------------------------------------------
+/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py run on Sat Mar 20 18:01:33 2010
+--editable=git://github.com/dziegler/django-css.git#django-css is not the right format; it must have #egg=Package
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 671, in run
+    InstallRequirement.from_editable(name, default_vcs=options.default_vcs))
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1682, in from_editable
+    name, url = parse_editable(editable_req, default_vcs)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 4485, in parse_editable
+    % editable_req)
+InstallationError: --editable=git://github.com/dziegler/django-css.git#django-css is not the right format; it must have #egg=Package
+------------------------------------------------------------
+/Users/peyton/Sites/pphoto/bin/pip run on Sat Mar 20 18:03:50 2010
+Cannot uninstall requirement django-extensiosn, not installed
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 723, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 2368, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1992, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement django-extensiosn, not installed
+------------------------------------------------------------
+/Users/peyton/Sites/pphoto/bin/pip run on Sat Mar 20 18:03:57 2010
+Cannot uninstall requirement -e, not installed
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 723, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 2368, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1992, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement -e, not installed
+------------------------------------------------------------
+/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py run on Sat Mar 20 18:04:07 2010
+Cannot uninstall requirement django-extensiosn, not installed
+Exception information:
+Traceback (most recent call last):
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 723, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 2368, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/Users/peyton/Sites/pphoto/lib/python2.6/site-packages/pip-0.6.1-py2.6.egg/pip.py", line 1992, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement django-extensiosn, not installed

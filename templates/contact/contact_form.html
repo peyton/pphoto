@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load markup typogrify %}
+
+{% block title %}The Product Photo - About Our Studio{% endblock %}
+
+{% block content %}
+	<div class="span-20 last"><h1>Contact us.</h1></div>
+	<div class="span-8">
+		<p>
+			Dave Randolph<br>
+			Phone: (214) 638-3002<br>
+			Email: photo@theproductphoto.com
+		</p>
+		<p>
+			The Product Photo<br>
+			13765 Beta Road<br>
+			Dallas, TX 75244
+		</p>
+	</div>
+	<div class="span-12 last right">
+		{{ form.as_p }}
+	</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

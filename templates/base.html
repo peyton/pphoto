@@ -1,0 +1,50 @@
+{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}The Product Photo - Increase Sales with Affordable, Professional Photography{% endblock %}</title>
+		{% block metatags %}
+		<meta name="description" content="The Product Photo produces quality, professional photography to drive interest in your products.">
+		<meta name="keywords" content="product photography, professional photography, jewelry photography">
+		{% endblock %}
+		{% block styles %}
+		{% compress css %}
+		<!-- Blueprint CSS Framework, Version .91 -->
+		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen">
+		<!-- End Blueprint CSS Framework-->
+		
+		<link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.less" type="text/css" media="screen" charset="utf-8">
+		{% endcompress %}
+		<!--[if lt IE 8]>
+			<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection">
+		<![endif]-->
+		{% endblock %}
+		<link rel="canonical" href="http://theproductphoto.com/">
+
+	</head>
+	<body>
+	{% block body %}
+		<div class="container">
+			<div class="span-20 last">
+				<a href="{% url home %}" title="The Product Photo — Home"><img src="{{ MEDIA_URL }}images/logo.png" alt="The Product Photo"></a>
+				<ul id="navigation">
+					<li><a href="{% url home %}" class="current">Home</a></li>
+					<li><a href="{% url samples %}">Samples</a></li>
+					<li><a href="{% url order %}">Order Online</a></li>
+					<li><a href="{% url qanda %}">Q&amp;A</a></li>
+					<li><a href="{% url about %}">About</a></li>
+					<li class="end"><a href="{% url contact_form %}">Contact</a></li>
+				</ul>
+			</div>
+			{% block content %}{% endblock %}
+			<div class="span-20 last footer">
+				&copy; The Product Photo | 13765 Beta Road | Dallas, TX 75244 | <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=WR+Studio&amp;sll=32.929886,-96.797962&amp;sspn=0.073193,0.171146&amp;ie=UTF8&amp;hq=WR+Studio&amp;hnear=&ll=32.937918,-96.82663&amp;spn=0.019197,0.026436&amp;z=15&iwloc=A">Map</a>
+			</div>
+		</div>
+	{% endblock %}
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	{% block scripts %}
+	{% endblock %}
+	</body>
+</html>
