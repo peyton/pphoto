@@ -3,6 +3,7 @@
 *.tar.bz2
 *.pyc
 *.pyo
+*.psd
 test.db
 static/CACHE/
 static/css/screen.css
