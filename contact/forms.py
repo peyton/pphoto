@@ -11,26 +11,28 @@ class MessageForm(ModelForm):
         if request is None:
             raise TypeError("Keyword argument 'request' must be supplied")
         super(MessageForm, self).__init__(data=data, files=files, *args, **kwargs)
-        # self.request = request
+        self.request = request
+
     
-    # def get_message_dict(self):
-    #     if not self.is_valid():
-    #         raise ValueError(_("Message cannot be sent from invalid contact form"))
-    #     message_dict = {}
-    #     for messaeg_part in ('from_email', 'message', 'recipient_list', 'subject'):
-    #         attr = getattr(self, message_part)
-    #         message_dict[message_part] = callable(attr) and attr() or attr
-    #     return message_dict
-    # 
-    # def save(self, fail_silently=False):
-    #     send_mail(fail_silently=fail_silently, **self.get_message_dict())
-    #     super(MessageForm, self).save(fail_silently=fail_silently)
+    def get_message_dict(self):
+        self.subject = "The Product Photo: %s, %s" % (self.cleaned_data['name'], self.cleaned_data['from_email'],)
+        self.message = self.cleaned_data['message'] + "\n\n-%s" % self.cleaned_data['name']
+        self.recipient_list = [a[1] for a in settings.ADMINS]
+        self.from_email = self.cleaned_data['from_email']
+        if not self.is_valid():
+            raise ValueError(_("Message cannot be sent from invalid contact form"))
+        message_dict = {}
+        for message_part in ('from_email', 'message', 'recipient_list', 'subject'):
+            attr = getattr(self, message_part)
+            message_dict[message_part] = callable(attr) and attr() or attr
+        return message_dict
+    
+    def save(self, fail_silently=False):
+        print(self.get_message_dict())
+        send_mail(fail_silently=fail_silently, **self.get_message_dict())
+        super(MessageForm, self).save()
     
     class Meta:
         model = Message
-        fields = ('name', 'email', 'message')
-        
-    # subject = "The Product Photo: %s" % name
-    # recipient_list = [email for name, email in settings.ADMINS]
-    # from_email = email
+        fields = ('name', 'from_email', 'message')
  

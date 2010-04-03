@@ -33,7 +33,7 @@ else:
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('David Randolph', 'pjrandolph@gmail.com')
+    ('David Randolph', 'pjrandolph@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -79,6 +79,16 @@ ADMIN_MEDIA_PREFIX = '%sadmin-media/' % MEDIA_URL
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '%hi!vwfljjo6amniv-2hod&rxfqy(70-x89a-2)2(sacp03e%3'
+
+# List of processors to add context to every template
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages"
+)
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -135,10 +145,13 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'django.contrib.messages',
+    'common',
     'compressor',
     'contact',
     'debug_toolbar',
     'django_extensions',
+    'eagleproject',
+    'order',
     'typogrify',
 )
 

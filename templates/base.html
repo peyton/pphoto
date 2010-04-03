@@ -1,4 +1,12 @@
-{% load compress %}
+{% load compress common_tags %}
+
+{% url home as home_url %}
+{% url samples as samples_url %}
+{% url order as order_url %}
+{% url qanda as qanda_url %}
+{% url about as about_url %}
+{% url contact_form as contact_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -28,12 +36,12 @@
 			<div class="span-20 last">
 				<a href="{% url home %}" title="The Product Photo — Home"><img src="{{ MEDIA_URL }}images/logo.png" alt="The Product Photo"></a>
 				<ul id="navigation">
-					<li><a href="{% url home %}" class="current">Home</a></li>
-					<li><a href="{% url samples %}">Samples</a></li>
-					<li><a href="{% url order %}">Order Online</a></li>
-					<li><a href="{% url qanda %}">Q&amp;A</a></li>
-					<li><a href="{% url about %}">About</a></li>
-					<li class="end"><a href="{% url contact_form %}">Contact</a></li>
+					<li><a href="{{ home_url }}" class="{% active request home_url %}">Home</a></li>
+					<li><a href="{{ samples_url }}" class="{% active request samples_url %}">Samples</a></li>
+					<li><a href="{{ order_url }}" class="{% active request order_url %}">Order Online</a></li>
+					<li><a href="{{ qanda_url }}" class="{% active request qanda_url %}">Q&amp;A</a></li>
+					<li><a href="{{ about_url }}" class="{% active request about_url %}">About</a></li>
+					<li class="end"><a href="{{ contact_url }}" class="{% active request contact_url %}">Contact</a></li>
 				</ul>
 			</div>
 			{% block content %}{% endblock %}

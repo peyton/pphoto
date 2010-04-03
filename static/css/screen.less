@@ -1,8 +1,12 @@
 body {
     background: #FFF;
-    color: #333;
+    
     font-size: 16px;
     padding: 3em 0;
+}
+
+body, h1, h2, h3 {
+    color: #333;
 }
 
 a {
@@ -13,8 +17,34 @@ a {
 	}
 }
 
+dd {
+    margin: 0 0 1em;
+}
+
 h1 {
     font: bold 200% HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input, textarea {
+    font-size: 16px;
+    padding: 3px;
+    width: 15em;
+}
+
+input[type=submit] {
+    font-size: 75%;
+    padding: 10px;
+    width: auto;
+}
+
+textarea {
+    height: 10em;
+    width: 20em;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
 }
 
 .right {
@@ -56,7 +86,7 @@ h1 {
 	text-decoration: underline;
 }
 
-#navigation a.current {
+#navigation a.active {
 	color: #944;
 	text-decoration: underline;
 }

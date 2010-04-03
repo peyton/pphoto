@@ -16,6 +16,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    
+    (r'^order/', include('pphoto.order.urls')),
     (r'^contact/', include('pphoto.contact.urls')),
     
     (r'^', include('pphoto.common.urls')),

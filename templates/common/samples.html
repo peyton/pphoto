@@ -1,27 +1,18 @@
 {% extends "base.html" %}
-{% load markup typogrify %}
+{% load compress markup typogrify %}
 
 {% block title %}The Product Photo - Increase Sales with Affordable, Professional Photography{% endblock %}
 
 {% block content %}
-	<div class="span-1">&nbsp;<!-- spacer div --></div>
-	<div class="span-14">
-		<h1>Competitive photography for your&nbsp;products.</h1>
-		<ul>
-			<li>Quality at affordable prices</li>
-			<li></li>
-			<li>Catalogs and websites</li>
-			<li>Save time and money</li>
-		</ul>
-	</div>
-	<div class="span-4">
-		<a href="{% url order %}" title="Place your order for photos online!">
-			<img src="{{ MEDIA_URL }}images/orderonline.png" alt="Order">
-		</a>
-	</div>
-	<div class="span-1">&nbsp;<!-- spacer div --></div>
+<div class="span-20 last">
+	
+</div>
 {% endblock %}
 
 {% block scripts %}
-
+{% include "jquery.html" %}
+{% compress js %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.galleriffic.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.opacityrollover.js"></script>
+{% endcompress %}
 {% endblock %}

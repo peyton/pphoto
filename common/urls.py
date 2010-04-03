@@ -1,16 +1,14 @@
 from django.conf.urls.defaults import *
 
-TS = 'common/' # template subdirectory
+template_subdirectory = 'common/' # template subdirectory
 
 urlpatterns = patterns('django.views.generic.simple',
-    ('^$',               'direct_to_template', {'template': '%shome.html' % TS},
+    ('^$',               'direct_to_template', {'template': '%shome.html' % template_subdirectory},
         'home'),
-    ('^about/$',         'direct_to_template', {'template': '%sabout.html' % TS},
+    ('^about/$',         'direct_to_template', {'template': '%sabout.html' % template_subdirectory},
         'about'),
-    ('^samples/$',       'direct_to_template', {'template': '%ssamples.html' % TS},
+    ('^samples/$',       'direct_to_template', {'template': '%ssamples.html' % template_subdirectory},
         'samples'),
-    ('^order/$',         'direct_to_template', {'template': '%sorder.html' % TS},
-        'order'),
-    ('^qanda/$',         'direct_to_template', {'template': '%sqanda.html' % TS},
+    ('^qanda/$',         'direct_to_template', {'template': '%sqanda.html' % template_subdirectory},
         'qanda'),
 )

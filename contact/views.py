@@ -79,5 +79,5 @@ def contact_form(request, form_class,
         context[key] = callable(value) and value() or value
     
     return render_to_response(template_name,
-                              { 'form': form, 'what': 'what' },
+                              { 'form': form },
                               context_instance=context)
