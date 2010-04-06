@@ -1,0 +1,43 @@
+{% extends "order/wizard.html" %}
+
+{% block order_button %}Continue{% endblock %}
+
+{% block order_form %}
+
+<li class="required">
+	<label>Number of shots:</label>
+</li>
+<ul class="quantity">
+	<li class="{{ form.single_quantity.css_classes }}">
+		{{ form.single_quantity.errors }}
+		{{ form.single_quantity.label_tag }}
+		{{ form.single_quantity }}
+	</li>
+	<li class="{{ form.small_group_quantity.css_classes }}">
+		{{ form.small_group_quantity.errors }}
+		{{ form.small_group_quantity.label_tag }}
+		{{ form.small_group_quantity }}
+	</li>
+	<li class="{{ form.large_group_quantity.css_classes }}">
+		{{ form.large_group_quantity.errors }}
+		{{ form.large_group_quantity.label_tag }}
+		{{ form.large_group_quantity }}
+	</li>
+</ul>
+<li class="{{ form.assembly_required.css_classes }}">
+	{{ form.assembly_required.errors }}
+	{{ form.assembly_required.label_tag }}
+	{{ form.assembly_required }}
+</li>
+<li class="{{ form.angle.css_classes }}">
+	{{ form.angle.errors }}
+	{{ form.angle.label_tag }}
+	{{ form.angle }}
+</li>
+<li class="{{ form.effects.css_classes }}">
+	{{ form.effects.errors }}
+	{{ form.effects.label_tag }}
+	{{ form.effects }}
+</li>
+
+{% endblock %}

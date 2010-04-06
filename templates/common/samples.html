@@ -1,11 +1,165 @@
 {% extends "base.html" %}
-{% load compress markup typogrify %}
+{% load compress markup typogrify common_tags %}
 
 {% block title %}The Product Photo - Increase Sales with Affordable, Professional Photography{% endblock %}
 
+{% block styles %}
+{{ block.super }}
+<style type="text/css">
+div.content {
+	position: absolute;
+	height: 650px;
+	right: 0;
+	width: 450px;
+}
+div.controls {
+	margin-top: 5px;
+	height: 23px;
+}
+div.controls a {
+	font-size: 75%;
+	color: #888;
+	padding: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+div.slideshow img {
+	border: 0;
+	position: absolute;
+	right: 0;
+	top: 5em;
+}
+div.ss-controls {
+	float: left;
+}
+div.nav-controls {
+	float: right;
+}
+div.slideshow-container {
+	position: absolute;
+	clear: both;
+	height: 650px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+div.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 450px;
+	height: 650px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+div.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+div.slideshow a.advance-link {
+	display: block;
+	width: 450px;
+	height: 650px; /* This should be set to be at least the height of the largest image in the slideshow */
+	line-height: 650px; /* This should be set to be at least the height of the largest image in the slideshow */
+	text-align: center;
+}
+div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+	text-decoration: none;
+}
+div.image-title {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+div.image-desc {
+	line-height: 1.3em;
+	padding-top: 12px;
+}
+div.navigation {
+	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+}
+ul.thumbs {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	z-index: 5000;
+}
+ul.thumbs li {
+	float: left;
+	padding: 0;
+	margin: 5px 10px 5px 0;
+	list-style: none;
+}
+a.thumb {
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+}
+ul.thumbs li.selected a.thumb {
+	background: #000;
+}
+a.thumb:focus {
+	outline: none;
+}
+ul.thumbs img {
+	border: none;
+	display: block;
+}
+div.pagination {
+	clear: both;
+}
+div.navigation div.top {
+	margin-bottom: 12px;
+	height: 11px;
+}
+div.navigation div.bottom {
+	margin-top: 12px;
+}
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+	display: block;
+	float: left;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #ccc;
+}
+div.pagination a:hover {
+	background-color: #eee;
+	text-decoration: none;
+}
+div.pagination span.current {
+	font-weight: bold;
+	background-color: #000;
+	border-color: #000;
+	color: #fff;
+}
+div.pagination span.ellipsis {
+	border: none;
+	padding: 5px 0 3px 2px;
+}
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="span-20 last">
-	
+<div class="span-20 last" style="position: relative">
+	<div id="gallery" class="content">
+		<div id="controls" class="controls"></div>
+		<div class="slideshow-container">
+			<div id="loading" class="loader"></div>
+			<div id="slideshow" class="slideshow"></div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	<div id="thumbs" class="navigation">
+		<ul class="thumbs noscript">
+			{% make_sample_list sample_list %}
+			{% for sample in sample_list %}
+			<li>
+				<a class="thumb" href="{{ MEDIA_URL }}images/samples/{{ sample }}.jpg">
+					<img src="{{ MEDIA_URL }}images/samples/thumbs/{{ sample }}.jpg">
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
 </div>
 {% endblock %}
 
@@ -15,4 +169,59 @@
 <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.galleriffic.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.opacityrollover.js"></script>
 {% endcompress %}
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		// We only want these styles applied when javascript is enabled
+		$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+		$('div.content').css('display', 'block');
+
+		// Initially set opacity on thumbs and add
+		// additional styling for hover effect on thumbs
+		var onMouseOutOpacity = 0.67;
+		$('#thumbs ul.thumbs li').opacityrollover({
+			mouseOutOpacity:   onMouseOutOpacity,
+			mouseOverOpacity:  1.0,
+			fadeSpeed:         'fast',
+			exemptionSelector: '.selected'
+		});
+		
+		// Initialize Advanced Galleriffic Gallery
+		var gallery = $('#thumbs').galleriffic({
+			delay:                     2500,
+			numThumbs:                 24,
+			preloadAhead:              10,
+			enableTopPager:            true,
+			enableBottomPager:         true,
+			maxPagesToShow:            7,
+			imageContainerSel:         '#slideshow',
+			controlsContainerSel:      '#controls',
+			loadingContainerSel:       '#loading',
+			renderSSControls:          false,
+			renderNavControls:         true,
+			pauseLinkText:             'Pause Slideshow',
+			prevLinkText:              '&lsaquo; Previous Photo',
+			nextLinkText:              'Next Photo &rsaquo;',
+			nextPageLinkText:          'Next &rsaquo;',
+			prevPageLinkText:          '&lsaquo; Prev',
+			enableHistory:             false,
+			autoStart:                 true,
+			syncTransitions:           true,
+			defaultTransitionDuration: 900,
+			onSlideChange:             function(prevIndex, nextIndex) {
+				// 'this' refers to the gallery, which is an extension of $('#thumbs')
+				this.find('ul.thumbs').children()
+					.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+					.eq(nextIndex).fadeTo('fast', 1.0);
+			},
+			onPageTransitionOut:       function(callback) {
+				this.fadeTo('fast', 0.0, callback);
+			},
+			onPageTransitionIn:        function() {
+				this.fadeTo('fast', 1.0);
+			}
+		});
+
+		/****************************************************************************************/
+	});
+</script>
 {% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load markup typogrify %}
+
+{% block title %}The Product Photo - Order Online{% endblock %}
+
+{% block content %}
+	<div class="span-20 last"><h1>{% block order_header %}Start your order online{% endblock %}</h1></div>
+	<div class="span-10 contact">
+		<form action="{% url order_form %}" method="post">
+			<p>
+				{% block order_calltoaction %}Fill out the following form to request a full quote.{% endblock %}
+			</p>
+			<ul>
+				{% block order_form %}{{ form.as_ul }}{% endblock %}
+			</ul>
+			{% csrf_token %}
+			<input type="hidden" name="{{ step_field }}" value="{{ step0 }}" />
+			{{ previous_fields|safe }}
+			<p><input type="submit" value="{% block order_button %}Submit{% endblock %}"></p>
+		</form>
+	</div>
+	<div class="span-4">&nbsp;<!-- spacer div --></div>
+	<div class="span-6 last">
+		<h3><strong>Pricing guide</strong></h3>
+		<p>
+			<strong>Single item shots</strong><br>
+			1&#8211;10: $32.00 each<br>
+			11&#8211;20: $30.00 each<br>
+			21&#8211;99: $25.00 each<br>
+			100+: <a href="{% url contact_form %}" title="Contact The Product Photo">Contact us</a>
+		</p>
+		<p>
+			<strong>Small group shots (2&#8211;3 items)</strong><br>
+			1&#8211;10: $37.00 each<br>
+			11&#8211;20: $34.00 each<br>
+			21&#8211;99: $29.00 each<br>
+			100+: <a href="{% url contact_form %}" title="Contact The Product Photo">Contact us</a>
+		</p>
+		<p>
+			<strong>Large group shots (4&#8211;6 items)</strong><br>
+			1&#8211;10: $43.00 each<br>
+			11&#8211;20: $40.00 each<br>
+			21&#8211;99: $37.00 each<br>
+			100+: <a href="{% url contact_form %}" title="Contact The Product Photo">Contact us</a>
+		</p>
+		<p>
+			<strong>Product assembly</strong><br>
+			$40 per hour
+		</p>
+	</div>
+
+{% endblock %}

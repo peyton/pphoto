@@ -1,6 +1,13 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
+from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import GenericSitemap
+
+from django.contrib import databrowse
+from eagle_project.models import Participant, Work
+
+databrowse.site.register(Participant)
+databrowse.site.register(Work)
 
 from django.contrib import admin
 admin.autodiscover()
@@ -16,6 +23,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    
+    (r'^databrowse/(.*)', login_required(databrowse.site.root)),
     
     (r'^order/', include('pphoto.order.urls')),
     (r'^contact/', include('pphoto.contact.urls')),

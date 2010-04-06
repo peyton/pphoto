@@ -26,25 +26,79 @@ h1 {
 }
 
 input, textarea {
-    font-size: 16px;
+    display: block;
+    font-size: 14px !important;
+    margin-top: 0 !important;
     padding: 3px;
-    width: 15em;
+    width: 75%;
 }
 
 input[type=submit] {
     font-size: 75%;
+    margin-top: 15px !important;
     padding: 10px;
     width: auto;
 }
 
-textarea {
-    height: 10em;
-    width: 20em;
+input.short {
+    display: inline;
+    width: 20%;
 }
 
-label {
-    display: inline-block;
-    width: 5em;
+textarea {
+    height: 10em;
+    width: 100%;
+}
+
+textarea.smaller {
+    height: 5em;
+    width: 75%;
+}
+
+form>li {
+    margin-bottom: 15px;
+}
+
+form {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style: none;
+        margin-bottom: 5px;
+    
+        label {
+            font-weight: normal;
+        }
+    }
+    
+    li.required label {
+        font-weight: bold;
+    }
+    
+    ul ul {
+        margin: .5em 0 1em;
+    }
+    
+    ul ul * {
+        font-weight: normal !important;
+        width: auto;
+    }
+    .quantity label {
+        display: inline-block;
+        width: 7em;
+    }
+    label input {
+        display: inline;
+        margin: 0 3px 0 1em;
+        vertical-align: 40%;
+    }
+    label {
+        display: block;
+        margin-right: 15px;
+    }
 }
 
 .right {

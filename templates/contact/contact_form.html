@@ -4,10 +4,12 @@
 {% block title %}The Product Photo - Contact Us{% endblock %}
 
 {% block content %}
-	<div class="span-20 last"><h1>Contact us.</h1></div>
+	<div class="span-20 last"><h1>Contact us</h1></div>
 	<div class="span-10 contact">
 		<form action="{% url contact_form %}" method="post">
-			{{ form.as_p }}
+			<ul>
+				{{ form.as_ul }}
+			</ul>
 			{% csrf_token %}
 			<p><input type="submit" value="Send"></p>
 		</form>

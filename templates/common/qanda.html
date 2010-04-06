@@ -11,14 +11,15 @@
 {% block content %}
 	<div class="span-6">&nbsp;<!-- spacer layer --></div>
 	<div class="span-14 last">
-		<h1>Questions &amp; Answers.</h1>
+		<h1>Questions &amp; Answers</h1>
 	</div>
 	<div class="span-6">
 		<div class="rotator">
 		  <ul>
-		    <li class="show"><img src="{{ MEDIA_URL }}images/sides/toasterside.jpg" alt="Fantastic product photography"></li>
+		    <li class="show"><img src="{{ MEDIA_URL }}images/sides/wineglassesside.jpg" alt="Fantastic product photography"></li>
+			
+			<li><img src="{{ MEDIA_URL }}images/sides/toasterside.jpg" alt="Fantastic product photography"></li>
 		    <li><img src="{{ MEDIA_URL }}images/sides/toycarside.jpg" alt="Fantastic product photography"></li>
-		    <li><img src="{{ MEDIA_URL }}images/sides/wineglassesside.jpg" alt="Fantastic product photography"></li>
 		    <li><img src="{{ MEDIA_URL }}images/sides/smartbearside.jpg" alt="Fantastic product photography"></li>
 			<li><img src="{{ MEDIA_URL }}images/sides/readingglassesside.jpg" alt="Fantastic product photography"></li>
 			<li><img src="{{ MEDIA_URL }}images/sides/10pcpotsside.jpg" alt="Fantastic product photography"></li>
@@ -40,7 +41,7 @@
 			<dt>Is white the only background&nbsp;color?</dt>
 			<dd>We can do any color or texture. Be sure to <a href="{% url contact_form %}" alt="Get in touch">contact us</a> with your specific&nbsp;requests.</dd>
 			<dt>How can you offer great photo for such a low price?</dt>
-			<dd>With over 20,000 square feet of shooting space, we're able to consistently deliver the best product photo very efficiently. All our capacity allows us to fulfill any order, from a few photos to a complete catalog, in a matter of days. And our process works&#8212;we've been suppling retailers with high-quality photography for over thirty years.</dd>
+			<dd>With over 20,000 square feet of shooting space, we're able to consistently deliver the best product photo very efficiently. All our capacity allows us to fulfill any order, from a few photos to a complete catalog, in a matter of days. And our process works&#8212;we've been suppling retailers with high-quality photography for over thirty years. Start your order <a href="{% url order_form %}" title="Order online">here</a>.</dd>
 		</dl>
 	</div>
 {% endblock %}

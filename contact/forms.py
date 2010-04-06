@@ -12,7 +12,9 @@ class MessageForm(ModelForm):
             raise TypeError("Keyword argument 'request' must be supplied")
         super(MessageForm, self).__init__(data=data, files=files, *args, **kwargs)
         self.request = request
-
+    
+    error_css_class    = 'error'
+    required_css_class = 'required'
     
     def get_message_dict(self):
         self.subject = "The Product Photo: %s, %s" % (self.cleaned_data['name'], self.cleaned_data['from_email'],)
@@ -28,7 +30,6 @@ class MessageForm(ModelForm):
         return message_dict
     
     def save(self, fail_silently=False):
-        print(self.get_message_dict())
         send_mail(fail_silently=fail_silently, **self.get_message_dict())
         super(MessageForm, self).save()
     
