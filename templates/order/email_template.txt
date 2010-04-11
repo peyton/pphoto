@@ -1,0 +1,21 @@
+The Product Photo - Order
+
+Name: {{ form_data.name }}
+Email: {{ form_data.email }}
+Phone: {{ form_data.phone }}
+{% if form_data.company %}Company: {{ form_data.company }}{% endif %}
+
+Single item shots: {{ form_data.single_quantity }}
+Small group shots: {{ form_data.small_group_quantity }}
+Large group shots: {{ form_data.large_group_quantity }}
+
+Assembly required? {{ form_data.assembly_required }}
+
+Angle: {{ form_data.angle }}
+Effects: {{ form_data.effects }}
+Focus: {{ form_data.focus }}
+
+Image resolution: {{ form_data.sizing }}
+Deliver via: {{ form_data.via }}
+{% if form_data.date %}Desired date: {{ form_data.date }}{% endif %}
+{% if form_data.comments %}Additional comments: {{ form_data.comments }}{% endif %}

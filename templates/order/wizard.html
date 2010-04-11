@@ -10,7 +10,7 @@
 			<p>
 				{% block order_calltoaction %}Fill out the following form to request a full quote.{% endblock %}
 			</p>
-			<ul>
+			<ul id="order_form">
 				{% block order_form %}{{ form.as_ul }}{% endblock %}
 			</ul>
 			{% csrf_token %}

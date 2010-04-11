@@ -7,6 +7,24 @@
 <li class="required">
 	<label>Number of shots:</label>
 </li>
+<table>
+	<tr>
+		<td>
+			<label for="id_0-single_quantity"><img src="{{ MEDIA_URL }}images/order_form/singleshot.jpg" alt="Single item"></label>
+		</td>
+		<td>
+			<label for="id_0-small_group_quantity"><img src="{{ MEDIA_URL }}images/order_form/smallgroup.jpg" alt="Small group"></label>
+		</td>
+		<td>
+			<label for="id_0-large_group_quantity"><img src="{{ MEDIA_URL }}images/order_form/largegroup.jpg" alt="Large group"></label>
+		</td>
+	</tr>
+	<tr>
+		<td><label for="id_0-single_quantity">Single item</label></td>
+		<td><label for="id_0-small_group_quantity">Small group</label></td>
+		<td><label for="id_0-large_group_quantity">Large group</label></td>
+	</tr>
+</table>
 <ul class="quantity">
 	<li class="{{ form.single_quantity.css_classes }}">
 		{{ form.single_quantity.errors }}
@@ -32,12 +50,77 @@
 <li class="{{ form.angle.css_classes }}">
 	{{ form.angle.errors }}
 	{{ form.angle.label_tag }}
+	<table id="angle">
+		<tr>
+			<td>
+				<label for="id_0-angle_1"><img src="{{ MEDIA_URL }}images/order_form/low.jpg" alt="Low angle"></label>
+			</td>
+			<td>
+				<label for="id_0-angle_2"><img src="{{ MEDIA_URL }}images/order_form/medium.jpg" alt="Medium angle"></label>
+			</td>
+			<td>
+				<label for="id_0-angle_3"><img src="{{ MEDIA_URL }}images/order_form/high.jpg" alt="High angle"></label>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="id_0-angle_1">Low angle</label></td>
+			<td><label for="id_0-angle_2">Medium angle</label></td>
+			<td><label for="id_0-angle_3">High angle</label></td>
+		</tr>
+	</table>
 	{{ form.angle }}
 </li>
 <li class="{{ form.effects.css_classes }}">
 	{{ form.effects.errors }}
 	{{ form.effects.label_tag }}
+	<table>
+		<tr>
+			<td>
+				<label for="id_0-effects_1"><img src="{{ MEDIA_URL }}images/order_form/shadow.jpg" alt="Drop shadow"></label>
+			</td>
+			<td>
+				<label for="id_0-effects_2"><img src="{{ MEDIA_URL }}images/order_form/reflection.jpg" alt="Reflection"></label>
+			</td>
+			<td>
+				<label for="id_0-effects_3"><img src="{{ MEDIA_URL }}images/order_form/outline.jpg" alt="Outline"></label>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="id_0-effects_1">Drop shadow</label></td>
+			<td><label for="id_0-effects_2">Reflection</label></td>
+			<td><label for="id_0-effects_3">Outline</label></td>
+		</tr>
+	</table>
 	{{ form.effects }}
 </li>
+<li class="{{ form.focus.css_classes }}">
+	{{ form.focus.errors }}
+	{{ form.focus.label_tag }}
+	<table>
+		<tr>
+			<td>
+				<label for="id_0-focus_1"><img src="{{ MEDIA_URL }}images/order_form/fullfocus.jpg" alt="Full focus"></label>
+			</td>
+			<td>
+				<label for="id_0-focus_2"><img src="{{ MEDIA_URL }}images/order_form/selectivefocus.jpg" alt="Selective focus"></label>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="id_0-focus_1">Full focus</label></td>
+			<td><label for="id_0-focus_2">Selective focus</label></td>
+		</tr>
+	</table>
+	{{ form.focus }}
+</li>
+{% endblock %}
 
+{% block scripts %}
+<script type="text/javascript">
+$(document).ready(function() {
+	/* Label click support */
+	$('#order_form').delegate('label', 'click', function(e){
+		$('#' + $(this).attr('for')).attr('checked', 'checked');
+	});
+});
+</script>
 {% endblock %}

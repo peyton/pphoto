@@ -1,6 +1,5 @@
 body {
     background: #FFF;
-    
     font-size: 16px;
     padding: 3em 0;
 }
@@ -11,6 +10,7 @@ body, h1, h2, h3 {
 
 a {
 	color: #316cf2;
+	outline: none;
 	
 	:hover {
 	    text-decoration: underline;
@@ -38,6 +38,10 @@ input[type=submit] {
     margin-top: 15px !important;
     padding: 10px;
     width: auto;
+}
+
+input[type=hidden] {
+    display: none;
 }
 
 input.short {
@@ -90,6 +94,15 @@ form {
         display: inline-block;
         width: 7em;
     }
+    td, img {
+        cursor: pointer;
+        _cursor: hand;
+        padding: 0;
+        text-align: center;
+    }
+    td label {
+        font-weight: normal !important;
+    }
     label input {
         display: inline;
         margin: 0 3px 0 1em;
@@ -99,6 +112,10 @@ form {
         display: block;
         margin-right: 15px;
     }
+}
+
+#angle td {
+    padding-right: 20px !important;
 }
 
 .right {
@@ -113,7 +130,7 @@ form {
     border-top: 1px solid #ccc;
     font-size: 75%;
     list-style: none;
-    margin: 0 0 50px;
+    margin: 0 0 40px;
     //padding: 0 0 0 275px;
     text-align: right;
 }
@@ -143,6 +160,24 @@ form {
 #navigation a.active {
 	color: #944;
 	text-decoration: underline;
+}
+
+a.orderonline {
+    background-image: url('/static/images/orderonline2.png');
+    display: inline-block;
+    height: 35px;
+    margin-right: 5px;
+    text-indent: -1000em;
+    width: 225px;
+    
+    :hover {
+        background-position: 0 -35px;
+    }
+}
+
+.browsesamples {
+    padding-top: 4px;
+    vertical-align: -20%;
 }
 
 .footer {

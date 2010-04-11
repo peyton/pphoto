@@ -6,18 +6,16 @@
 {% block content %}
 	<div class="span-1">&nbsp;<!-- spacer div --></div>
 	<div class="span-14">
-		<h1>Competitive photography for your&nbsp;products</h1>
+		<h1>Competitive&nbsp;photography<br>for your&nbsp;products</h1>
 		<ul>
 			<li>Quality at affordable prices</li>
-			<li>Save</li>
-			<li>Catalogs and websites</li>
-			<li>Save time and money</li> 
+			<li>Individual attention</li>
+			<li>Outstanding service</li>
+			<li>Extraordinary results</li> 
 		</ul>
+		<a href="{% url order_form %}" class="orderonline" title="Order online in seconds">Order online in seconds</a> <span  class="browsesamples">or <a href="" title="Sample product photography">browse our samples</a>.</span>
 	</div>
 	<div class="span-4">
-		<a href="{% url order_form %}" title="Place your order for photos online!">
-			<img src="{{ MEDIA_URL }}images/orderonline.png" alt="Order">
-		</a>
 	</div>
 	<div class="span-1 last">&nbsp;<!-- spacer div --></div>
 {% endblock %}
