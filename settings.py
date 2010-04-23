@@ -22,7 +22,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'pandolph',                      # Or path to database file if using sqlite3.
+            'NAME': 'pphoto',                      # Or path to database file if using sqlite3.
             'USER': 'root',                      # Not used with sqlite3.
             'PASSWORD': 'monkey69',                  # Not used with sqlite3.
             'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -33,7 +33,7 @@ else:
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('David Randolph', 'pjrandolph@gmail.com'),
+    ('David Randolph', 'wrphoto@wr-studio.com'),
 )
 
 MANAGERS = ADMINS
