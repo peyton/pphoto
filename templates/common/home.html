@@ -13,9 +13,19 @@
 			<li>Outstanding service</li>
 			<li>Extraordinary results</li> 
 		</ul>
-		<a href="{% url order_form %}" class="orderonline" title="Order online in seconds">Order online in seconds</a> <span  class="browsesamples">or <a href="" title="Sample product photography">browse our samples</a>.</span>
+		<a href="{% url order_form %}" class="orderonline" title="Order online in seconds">Order online in seconds</a> <span class="browsesamples">or <a href="{% url samples %}" title="Sample product photography">browse our samples</a>.</span>
 	</div>
-	<div class="span-4">
-	</div>
+	<div class="span-4">&nbsp;</div>
 	<div class="span-1 last">&nbsp;<!-- spacer div --></div>
+	<div class="span-20" style="padding: 20px 40px 0; width:710px">
+		<p>
+			The Product Photo is an internet division of one of the largest studios in the southwest located in Dallas, Texas. Our parent company (<span class="caps">WR Studio</span>) has provided photography for websites and catalogs for over 20 years to leading corporations, manufacturers, and advertising agencies around the globe.
+		</p>
+		<p>
+			Product photography is something that you could outsource to help free up some of your time. Our quality within your budget produces value to your sales.
+		</p>
+		<p>
+			Take a moment to review our <a href="{% url samples %}">samples</a>. The Product Photo is your right choice for price and quality to improve your sales!
+		</p>
+	</div>
 {% endblock %}
