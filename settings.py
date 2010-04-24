@@ -170,7 +170,7 @@ CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
 
 def custom_show_toolbar(request):
-    return DEBUG
+    return False
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
