@@ -27,10 +27,21 @@
 			You should follow us on twitter <a href="http://twitter.com/theproductphoto" title="The Product Photo's Twitter account">here</a>. Thank you for your interest and we look forward to taking care of your photo needs.
 		</p>
 	</div>
-	<div class="span-8 last right">
-		<a href="{{ MEDIA_URL }}images/studio/studiowindows_l.jpg" title="Enlarge image"><img src="{{ MEDIA_URL }}images/studio/studiowindows.jpg" alt="Studio" class="right"></a>
-		<br class="clear">
-		<a href="{{ MEDIA_URL }}images/studio/studiomain_l.jpg" title="Enlarge image"><img src="{{ MEDIA_URL }}images/studio/studiomain.jpg" alt="Studio" class="right"></a>
-		<a href="{{ MEDIA_URL }}images/studio/kitchen_l.jpg" title="Enlarge image"><img src="{{ MEDIA_URL }}images/studio/kitchen.jpg" alt="Studio" class="right" style="margin-left: 5px"></a>
+	<div class="span-8 last">
+		<table>
+			<tr>
+				<td colspan="2">
+					<a href="{{ MEDIA_URL }}images/studio/studiowindows_l.jpg" title="Enlarge image"><img src="{{ MEDIA_URL }}images/studio/studiowindows.jpg" alt="Studio"></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="{{ MEDIA_URL }}images/studio/studiomain_l.jpg" title="Enlarge image"><img src="{{ MEDIA_URL }}images/studio/studiomain.jpg" alt="Studio"></a>
+				</td>
+				<td>
+					<a href="{{ MEDIA_URL }}images/studio/kitchen_l.jpg" title="Enlarge image" style="padding-left: 10px"><img src="{{ MEDIA_URL }}images/studio/kitchen.jpg" alt="Studio"></a>
+				</td>
+			</tr>
+		</table>
 	</div>
 {% endblock %}
