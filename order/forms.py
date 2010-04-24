@@ -10,8 +10,6 @@ from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 
-from order.models import Order
-
 ASSEMBLY_CHOICES = (
     ('N', 'No'),
     ('Y', 'Yes'),
