@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load markup typogrify %}
+
+{% block title %}The Product Photo - Page not found{% endblock %}
+
+{% block content %}
+	<div class="span-12"><h1>Oops, page not found</h1></div>
+	<div class="span-8 last">&nbsp;<!-- spacer div --></div>
+	<div class="span-12">
+		<p>
+			We couldn't find the page you requested. 
+			<a href="{% url home %}">Back to the homepage</a>.
+		</p>
+	</div>
+	<div class="span-8 last">&nbsp;<!-- spacer div --></div>
+{% endblock %}

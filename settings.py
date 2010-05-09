@@ -33,7 +33,7 @@ else:
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('David Randolph', 'wrphoto@wr-studio.com'),
+    ('David Randolph', 'way@fayu.com'),
 )
 
 MANAGERS = ADMINS
@@ -157,6 +157,8 @@ INSTALLED_APPS = (
 )
 
 FORCE_LOWERCASE_TAGS = True
+
+SEND_BROKEN_LINK_EMAILS = False
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 

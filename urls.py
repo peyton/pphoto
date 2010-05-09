@@ -12,7 +12,6 @@ databrowse.site.register(Work)
 from django.contrib import admin
 admin.autodiscover()
 
-
 urlpatterns = patterns('',
     # Example:
     # (r'^pandolph/', include('pandolph.foo.urls')),
