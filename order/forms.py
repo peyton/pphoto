@@ -85,21 +85,32 @@ class ContactInfoForm(forms.Form):
     # address       = forms.CharField(widget=forms.widgets.Textarea(attrs={'class':'smaller'}), label=_('Full address'),
     #     error_messages={'required': 'Please enter your full address, including Street, City, State, and ZIP Code.'}
     #     )
-
-class DeliveryInfoForm(forms.Form):
-    error_css_class    = 'error'
-    required_css_class = 'required'
     
-    resolution    = forms.BooleanField(label=_('Image resolution'), initial='W',
-        widget=forms.widgets.RadioSelect(choices=RESOLUTION_CHOICES, attrs={'class':'radio'}))
+    # resolution    = forms.BooleanField(label=_('Image resolution'), initial='W',
+    #     widget=forms.widgets.RadioSelect(choices=RESOLUTION_CHOICES, attrs={'class':'radio'}))
     deliver_via   = forms.BooleanField(label=_('Deliver via'), initial='W',
         widget=forms.widgets.RadioSelect(choices=DELIVERY_CHOICES, attrs={'class':'radio'}))
-    date          = forms.DateField(label=_('Preferred date (optional)'), required=False,
-        error_messages={'invalid': 'Please enter a date in the form MM/DD/YYYY.'}
-        )
+    # date          = forms.DateField(label=_('Preferred date (optional)'), required=False,
+    #     error_messages={'invalid': 'Please enter a date in the form MM/DD/YYYY.'}
+    #     )
     comments      = forms.CharField(widget=forms.widgets.Textarea(), required=False,
             label=_('Additional comments (optional)'),
         )
+
+# class DeliveryInfoForm(forms.Form):
+#     error_css_class    = 'error'
+#     required_css_class = 'required'
+#     
+#     # resolution    = forms.BooleanField(label=_('Image resolution'), initial='W',
+#     #     widget=forms.widgets.RadioSelect(choices=RESOLUTION_CHOICES, attrs={'class':'radio'}))
+#     deliver_via   = forms.BooleanField(label=_('Deliver via'), initial='W',
+#         widget=forms.widgets.RadioSelect(choices=DELIVERY_CHOICES, attrs={'class':'radio'}))
+#     # date          = forms.DateField(label=_('Preferred date (optional)'), required=False,
+#     #     error_messages={'invalid': 'Please enter a date in the form MM/DD/YYYY.'}
+#     #     )
+#     comments      = forms.CharField(widget=forms.widgets.Textarea(), required=False,
+#             label=_('Additional comments (optional)'),
+#         )
 
 class OrderWizard(FormWizard):    
     def get_message_dict(self, form_list):

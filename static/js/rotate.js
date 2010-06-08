@@ -1,15 +1,15 @@
 <!-- By Dylan Wagstaff, http://www.alohatechsupport.net -->
 
-function theRotator() {
+//Call the rotator function to run the slideshow, 6000 = change to next image after 6 seconds
+
+
+function opacities() {
 	//Set the opacity of all images to 0
 	$('div.rotator ul li').css({opacity: 0.0});
 	
 	//Get the first image and display it (gets set to full opacity)
 	$('div.rotator ul li:first').css({opacity: 1.0});
 		
-	//Call the rotator function to run the slideshow, 6000 = change to next image after 6 seconds
-	setInterval('rotate()',5000);
-	
 }
 
 function rotate() {	
@@ -29,8 +29,3 @@ function rotate() {
 	.removeClass('show');
 	
 };
-
-$(document).ready(function() {		
-	//Load the slideshow
-	theRotator();
-});

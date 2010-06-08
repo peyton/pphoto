@@ -1,25 +1,56 @@
 {% extends "base.html" %}
 {% load markup typogrify %}
 
-{% block title %}The Product Photo - Increase Sales with Affordable, Professional Photography{% endblock %}
+{% block title %}Increase Sales with Affordable, Professional Product Photography{% endblock %}
+
+{% block styles %}
+{{ block.super }}
+{% include "rotator_styles.html" %}
+<style type="text/css">
+.container * {
+	position: relative;
+	z-index: 53;
+}
+.rotator {
+	position: absolute;
+	right: -375px;
+	top: -25px;
+	width: 450px;
+}
+.rotator, .rotator * {
+	z-index: 1;
+}
+div.rotator ul li.show {
+	z-index:1
+}
+</style>
+{% endblock %}
 
 {% block content %}
-	<div class="span-1">&nbsp;<!-- spacer div --></div>
 	<div class="span-14">
+		<div class="rotator">
+			<ul>
+				<li class="show"><img src="{{ MEDIA_URL }}images/homeslides/wineglasses.jpg" alt="Fantastic product photography" style="padding-top:7px"></li>
+				<li><img src="{{ MEDIA_URL }}images/homeslides/toaster.jpg" alt="Fantastic product photography" style="padding-left:5px"></li>
+				<li><img src="{{ MEDIA_URL }}images/homeslides/toycar.jpg" alt="Fantastic product photography" style="padding-top:20px"></li>
+				<li><img src="{{ MEDIA_URL }}images/homeslides/smartbear.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/homeslides/10pcpots.jpg" alt="Fantastic product photography"></li>
+			</ul>
+		</div>
 		<h1>Competitive&nbsp;photography<br>for your&nbsp;products</h1>
-		<ul>
-			<li>Quality at affordable prices</li>
+		<ul class="salespoints">
+			<li>Affordable prices</li>
+			<li>The best product photography</li>
 			<li>Individual attention</li>
 			<li>Outstanding service</li>
 			<li>Extraordinary results</li> 
 		</ul>
 		<a href="{% url order_form %}" class="orderonline" title="Order online in seconds">Order online in seconds</a> <span class="browsesamples">or <a href="{% url samples %}" title="Sample product photography">browse our samples</a>.</span>
 	</div>
-	<div class="span-4">&nbsp;</div>
-	<div class="span-1 last">&nbsp;<!-- spacer div --></div>
-	<div class="span-20" style="padding: 20px 40px 0; width:710px">
+	<div class="span-7 last">&nbsp;<!-- spacer div --></div>
+	<div class="span-20" style="padding-top: 50px">
 		<p>
-			The Product Photo is an internet division of one of the largest studios in the southwest located in Dallas, Texas. Our parent company (<span class="caps">WR Studio</span>) has provided photography for websites and catalogs for over 20 years to leading corporations, manufacturers, and advertising agencies around the globe.
+			The Product Photo, located in Dallas, Texas, is an internet division of one of the largest studios in the southwest. Our parent company (<span class="caps">WR Studio</span>) has provided photography for websites and catalogs for over 20 years to leading corporations, manufacturers, and advertising agencies around the globe.
 		</p>
 		<p>
 			Product photography is something that you could outsource to help free up some of your time. Our quality within your budget produces value to your sales.
@@ -28,4 +59,16 @@
 			Take a moment to review our <a href="{% url samples %}">samples</a>. The Product Photo is your right choice for price and quality to improve your sales!
 		</p>
 	</div>
+{% endblock %}
+
+{% block scripts %}
+{% include "jquery.html" %} 
+{% include "rotator.html" %}
+<script type="text/javascript">
+$(document).ready(function() {		
+	//Load the slideshow
+	opacities();
+	setInterval('rotate()',1000);
+});
+</script>
 {% endblock %}

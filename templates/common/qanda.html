@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load markup typogrify %}
 
-{% block title %}The Product Photo - Questions &amp; Answers{% endblock %}
+{% block title %}Questions &amp; Answers{% endblock %}
 
 {% block styles %}
 {{ block.super }}
@@ -15,18 +15,16 @@
 	</div>
 	<div class="span-6">
 		<div class="rotator">
-		  <ul>
-		    <li class="show"><img src="{{ MEDIA_URL }}images/sides/wineglassesside.jpg" alt="Fantastic product photography"></li>
-			
-			<li><img src="{{ MEDIA_URL }}images/sides/toasterside.jpg" alt="Fantastic product photography"></li>
-		    <li><img src="{{ MEDIA_URL }}images/sides/toycarside.jpg" alt="Fantastic product photography"></li>
-		    <li><img src="{{ MEDIA_URL }}images/sides/smartbearside.jpg" alt="Fantastic product photography"></li>
-			<li><img src="{{ MEDIA_URL }}images/sides/readingglassesside.jpg" alt="Fantastic product photography"></li>
-			<li><img src="{{ MEDIA_URL }}images/sides/10pcpotsside.jpg" alt="Fantastic product photography"></li>
-			<li><img src="{{ MEDIA_URL }}images/sides/umbrellaside.jpg" alt="Fantastic product photography"></li>
-		  </ul>
+			<ul>
+				<li class="show"><img src="{{ MEDIA_URL }}images/sides/wineglassesside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/toasterside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/toycarside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/smartbearside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/readingglassesside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/10pcpotsside.jpg" alt="Fantastic product photography"></li>
+				<li><img src="{{ MEDIA_URL }}images/sides/umbrellaside.jpg" alt="Fantastic product photography"></li>
+			</ul>
 		</div>
-		
 	</div>
 	<div class="span-14 last">
 		<dl>
@@ -49,4 +47,11 @@
 {% block scripts %}
 {% include "jquery.html" %}
 {% include "rotator.html" %}
+<script type="text/javascript">
+$(document).ready(function() {		
+	//Load the slideshow
+	opacities();
+	setInterval('rotate()',5000);
+});
+</script>
 {% endblock %}
