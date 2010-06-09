@@ -18,7 +18,7 @@
 	width: 450px;
 }
 .rotator, .rotator * {
-	z-index: 1;
+	z-index: 0;
 }
 div.rotator ul li.show {
 	z-index:1
@@ -68,7 +68,7 @@ div.rotator ul li.show {
 $(document).ready(function() {		
 	//Load the slideshow
 	opacities();
-	setInterval('rotate()',1000);
+	setInterval('rotate()',5000);
 });
 </script>
 {% endblock %}
